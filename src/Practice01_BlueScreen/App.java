@@ -1,3 +1,5 @@
+package Practice01_BlueScreen;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -43,5 +45,3 @@ class Window extends JPanel {
         graphic.drawLine(390, 490, 410, 450);
     }
 }
-
-

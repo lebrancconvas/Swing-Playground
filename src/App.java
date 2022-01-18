@@ -1,15 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class App extends JPanel {
+public class App {
     public static void main(String[] args) {
-        App m = new App();
-        JFrame f = new JFrame();
-        f.add(m);
-        f.setTitle("Java Swing Playground.");
-        f.setSize(800, 600);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
+        GraphicsSwing swingWindow = new GraphicsSwing();
+        swingWindow.init();
+    }
+}
+
+class GraphicsSwing extends JPanel {
+    public void init() {
+        GraphicsSwing window = new GraphicsSwing();
+        JFrame frame = new JFrame();
+        int width = 800;
+        int height = 600;
+        frame.add(window);
+        frame.setTitle("Java Swing Playground");
+        frame.setSize(width, height);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
 

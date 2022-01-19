@@ -1,4 +1,4 @@
-package Practice02;
+package Practice02_DDALine;
 
 import javax.swing.*;
 import java.awt.*;

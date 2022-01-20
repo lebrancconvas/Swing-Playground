@@ -26,10 +26,14 @@ class Window extends JPanel {
 	}
 
 	public void paintComponent(Graphics graphic) {
+		// Background Setting. 
+		// graphic.setColor(Color.BLACK);
+		// graphic.fillRect(0, 0, WIDTH, HEIGHT);
+
+		// Line Setting. 
 		graphic.setColor(Color.BLACK);
-		graphic.fillRect(0, 0, WIDTH, HEIGHT);
-		graphic.setColor(Color.WHITE);
 		ddaLine(graphic, 100, 50, 10, 70);
+		ddaLine(graphic, 100, 100, 10, 20);
 	}
 
 	public void ddaLine(Graphics graphic, int x1, int y1, int x2, int y2) {
@@ -40,31 +44,31 @@ class Window extends JPanel {
 
 		if(slope >= 0 && slope <= 1) {
 			for(int i = x1; i <= x2; i++) {
-				plot(graphic, i, y1);
+				plot(graphic, i, y1, 1);
 				y1 += (int) Math.ceil(slope);
 			}
 		}
 		else if(slope > 1) {
 			for(int i = y1; i <= y2; i++) {
-				plot(graphic, x1, i);
+				plot(graphic, x1, i, 1);
 				y1 += (int) Math.ceil(1 / slope); 
 			}
 		}
 		else if(slope >= -1 && slope <= 0) {
 			for(int i = x1; i >= x2; i--) {
-				plot(graphic, i, y1);
+				plot(graphic, i, y1, 1);
 				y1 += (int) Math.floor(slope); 
 			}
 		}
 		else if(slope < -1) {
 			for(int i = y1; i >= y2; i--) {
-				plot(graphic, x1, i);
+				plot(graphic, x1, i, 1);
 				y1 += (int) Math.floor(1 / slope);  
 			}
 		}
 	}
 
-	public void plot(Graphics graphic, int x, int y) {
-		graphic.fillRect(x, y, 1, 1);
+	public void plot(Graphics graphic, int x, int y, int size) {
+		graphic.fillRect(x, y, size, size);
 	}
 }
